@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.urls import reverse, reverse_lazy
-from django.views.generic import CreateView
+from django.views.generic import CreateView, DetailView
 from accountapp.models import HelloWorld
 
 
@@ -35,3 +35,9 @@ class AccountCreateView(CreateView):
 
     # template 지정 (어느 html 파일을 이용해서 회원가입 페이지를 보여줄지)
     template_name = 'accountapp/create.html'
+
+
+class AccountDetailView(DetailView):
+    model = User
+    context_object_name = 'target_user'
+    template_name = 'accountapp/detail.html'
