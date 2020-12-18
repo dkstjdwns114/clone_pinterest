@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div style="text-align: center;">
+    <!--
+        {% url 'accountapp:create' %}
+            accountapp 안에 create로 연결하라는 뜻 (모든 view에서 이런식으로 routing 할것임
+    -->
+        <form action="{% url 'accountapp:create' %}" method="post">
+            {% csrf_token %}
+            {{ form }}
+            <input type="submit" class="btn btn-primary">
+        </form>
+    </div>
+
+{% endblock %}
