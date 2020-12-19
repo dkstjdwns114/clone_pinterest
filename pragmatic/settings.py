@@ -142,3 +142,20 @@ STATICFILES_DIRS = [
 
 LOGIN_REDIRECT_URL = reverse_lazy('accountapp:hello_world')
 LOGOUT_REDIRECT_URL = reverse_lazy('accountapp:login')
+
+
+# 미디어(이미지) 관련 URL
+# 주소창에 media 이하로 접근해야 실제 media 파일에 접근할 수 있다.
+MEDIA_URL = '/media/'
+
+"""
+ex) 127.0.0.1:8000/media/test.jpg 로 접속을 한다면
+test.jpg 파일일 볼 수 있다.
+만약 MEDIA_URL = '/testing/' 이라면
+주소는 127.0.0.1:8000/testing/test.jpg 이렇게 되는 것이다.
+"""
+
+# 미디어 파일을 서버에 올렸을 때 어느 경로에 지정될것인지에 대한 정보
+# 파일을 올리게 되면 pragmatic에서 media라는 디렉토리가 새로 생성되면서
+# media 디렉토리 안에 우리가 올린 파일들이 저장된다.
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
