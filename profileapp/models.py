@@ -3,7 +3,7 @@ from django.db import models
 
 # Create your models here.
 
-class Proflie(models.Model):
+class Profile(models.Model):
     # Profile과 user 객체를 하나씩 연결해준다.
     # on_delete : 이 user 객체가 delete 될 때 이와 연결되어있는 Profile 객체가 어떤 행동을 보일것인지를 담당
     # models.CASCADE : 이 Profile도 없어지게 하는것 (Django document 참고)
@@ -16,6 +16,6 @@ class Proflie(models.Model):
     image = models.ImageField(upload_to='profile/', null=True)
 
     nickname = models.CharField(max_length=20, unique=True, null=True)
-    
+
     # 상태메시지
     message = models.CharField(max_length=100, null=True)
