@@ -23,5 +23,6 @@ urlpatterns = [
     path('accounts/', include('accountapp.urls')),
     path('profiles/', include('profileapp.urls')),
     path('articles/', include('articleapp.urls')),
+    path('comments/', include('commentapp.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 # 위와같이 static을 더해줘야 media 안의 경로를 서버가 인식할 수 있다.
