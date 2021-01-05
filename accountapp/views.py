@@ -23,7 +23,7 @@ class AccountCreateView(CreateView):
     form_class = UserCreationForm
 
     # 이 계정을 만들기에 성공했다면 어느 경로로 redirection 할 지
-    success_url = reverse_lazy('accountapp:hello_world')
+    success_url = reverse_lazy('accountapp:login')
 
     # template 지정 (어느 html 파일을 이용해서 회원가입 페이지를 보여줄지)
     template_name = 'accountapp/create.html'
@@ -49,7 +49,7 @@ class AccountUpdateView(UpdateView):
     model = User
     context_object_name = 'target_user'
     form_class = AccountUpdateForm
-    success_url = reverse_lazy('accountapp:hello_world')
+    success_url = reverse_lazy('articleapp:list')
     template_name = 'accountapp/update.html'
 
 
